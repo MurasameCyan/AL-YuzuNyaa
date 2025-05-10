@@ -1,6 +1,9 @@
 # **Perseus**
 
-本项目来自于[https://github.com/4pii4/PiePerseus](https://github.com/4pii4/PiePerseus)，更原始的项目为[https://github.com/Egoistically/Perseus](https://github.com/Egoistically/Perseus)。
+本项目来自于
+https://github.com/CWWHX/PiePerseus-mod
+https://github.com/4pii4/PiePerseus
+https://github.com/Egoistically/Perseus
 
 用于修改《碧蓝航线》，实现简单的开挂（***注意封禁！禁止修改涉及活动EX、META作战、META支援、共斗等部分的数据***）。
 
