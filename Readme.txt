@@ -31,7 +31,7 @@ AndroidManifest.xml:
 	
 如果不是CN的安装包，那么x86架构基本不存在，不需要放入x86的库
 
-由于AZ各个区域的官方签名并不一致，所以只有在bili服伪装了官方签名。
+由于AL各个区域的官方签名并不一致，所以只有在bili服成功伪装了官方签名。
 如果你想在其他服伪装官方签名，com\android\support\PmsHook.smali里面的.method public static killPM(Landroid/content/Context;)V 
 该方法内有个字符串const-string v1, "308204a8......"   将这个308204a8......替换成对应区域的官方签名即可
 可使用以下代码获取官方签名字符串，注意，需要当前安装的是AZ官方版本，才能正确获取官方签名字符串

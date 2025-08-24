@@ -1,5 +1,17 @@
 .class public final Lorg/lsposed/hiddenapibypass/Helper$Class;
 .super Ljava/lang/Object;
+.source "Helper.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/lsposed/hiddenapibypass/Helper;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Class"
+.end annotation
 
 
 # instance fields
@@ -14,6 +26,13 @@
 .field private transient clinitThreadId:I
 
 .field private transient componentType:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
+.end field
 
 .field private transient copiedMethodsOffset:S
 
@@ -50,6 +69,13 @@
 .field private transient status:I
 
 .field private transient superClass:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
+.end field
 
 .field private transient virtualMethodsOffset:S
 
@@ -60,6 +86,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

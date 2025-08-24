@@ -35,7 +35,7 @@ Find </application> at the end of the file and directly replace it with the foll
 	
 If the apk is not a CN install package, then the x86 architecture is basically non-existent and there is no need to put in x86 libraries
 
-Since the official signature is not consistent across AZ regions, it is only disguised in the bili region.
+Since the official signature is not consistent across AL regions, it is only disguised in the bili region.
 If you want to disguise the official signature in other region, com\android\support\PmsHook.smali inside the .method public static killPM(Landroid/content/Context;)V 
 There is a string ``` const-string v1, "308204a8......" ``` inside this method,   Replace this 308204a8...... Replace this 308204a8 
 with the official signature of the corresponding region. You can use the following code to get the official signature string, note that you need to have the official version of AZ installed to get the official signature string correctly.

@@ -1,5 +1,17 @@
 .class public final Lorg/lsposed/hiddenapibypass/Helper$Executable;
 .super Lorg/lsposed/hiddenapibypass/Helper$AccessibleObject;
+.source "Helper.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/lsposed/hiddenapibypass/Helper;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Executable"
+.end annotation
 
 
 # instance fields
@@ -18,6 +30,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 87
     invoke-direct {p0}, Lorg/lsposed/hiddenapibypass/Helper$AccessibleObject;-><init>()V
 
     return-void
