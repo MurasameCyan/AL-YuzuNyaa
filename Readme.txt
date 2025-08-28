@@ -29,7 +29,7 @@ AndroidManifest.xml:
     </application>
 	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 	
-如果不是CN的安装包，那么x86架构基本不存在，不需要放入x86的库
+先观察游戏存在哪些架构的库，对应的lib放进去就行了，不一定需要全部放入
 
 由于AL各个区域的官方签名并不一致，所以只有在bili服成功伪装了官方签名。
 如果你想在其他服伪装官方签名，com\android\support\PmsHook.smali里面的.method public static killPM(Landroid/content/Context;)V 
