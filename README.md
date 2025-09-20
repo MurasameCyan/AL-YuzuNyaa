@@ -1,32 +1,16 @@
-# Azurlane
-I've refactored the code logic to fix the crashing issue <br>
+All features can now be freely modified and take effect immediately.
+WeaponReloadSpeed: The changes will take effect in the next battle.
+RemoveBBAnimation: The changes will take effect in the next battle.
+ExerciseGodMode was too weak and got scrapped. To meet requirements, Multiple defense mechanic has been modified to apply only to our side.
+WeaponReloadSpeed: higher values result in faster reloading. Weapons will no longer share the same cooldown.
+RemoveHardModeStatLimit: no longer restricted by ship type when selecting vessels
+Fixed a bug where the floating window would disappear when switching back to the foreground after the game had been running in the background for a period of time.
 
-This translation service is weak and can't express my meaning correctly, so I won't explain how to fix it <br>
-
-# How to use
-* Just load my library directly, no need to define additional methods <br><br>
-    * open `com\unity3d\player\UnityPlayerActivity.smali` , find `onCreate` method.
-
-    ```
-    .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 2
-    ``` 
-    * Insert loading code under .locals 2  <br>
-
-    ```
-    const-string v0, "JMBQ"
-    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    ```
-    * Then put my library into the correct lib directory of the apk, compile and sign the apk<br><br>
-* Actually my library doesn't need context support, if you know which methods will be loaded first after the game starts, you can also load my library in that method with the same effect
-
-
-# Config
-Settings can be found inside `JMBQ.ini`, located within the game's external files directory (`/sdcard/Android/data/{package-name}/files/`).
-
-If you're unsure of your region's package name, just look it up. All of them include "AzurLane" though.
-
-Enabling the Skins mod gives you all skins in-game as if you had bought them. They are persistent between restarts.
-
-# Credits
-* [Egoistically/Perseus](https://github.com/Egoistically/Perseus)
+所有功能都可以随意更改生效了
+快速装填：修改后将在下一次战斗生效
+移除舰炮开火动画：修改后将在下一次战斗生效
+演习无敌功能太废，惨遭删除，为了满足演习需求，修改了倍防的判定，只对我方生效
+调整了快速装填功能，数值越大，装填越快，不会再出现所有武器都是同一个cd的情况
+增强了移除困难限制，在选择舰船时不再受到种类限制
+修复了游戏进入后台一段时间后再切回前台时悬浮窗消失的bug
+准确识别当前语言为简体中文的设备，为其提供简体中文页面
