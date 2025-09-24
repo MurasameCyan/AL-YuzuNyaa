@@ -68,10 +68,12 @@
     "AutoRepeatLimit"//连续作战次数,自律次数
     "ChatCommands"//聊天框命令
     "RemoveBBAnimation" //移除舰船开炮动画
+    "RemoveAwakenAnimation"//移除舰船认知觉醒动画
     "RemoveMoraleWarning"//移除心情过低警告
     "RemoveHardModeStatLimit"//移除困难属性限制
     "RemoveNSFWArts" //移除不适合在公共场合展示的图像
     "AllBlueprintsConvertible"//科研,所有图纸都可以转换
     "OathAll"//全舰船誓约
+    "UnlockUI"//头像框，聊天气泡，战斗界面ui 全解锁
 .......................................................................................完.......................................................................................
 
