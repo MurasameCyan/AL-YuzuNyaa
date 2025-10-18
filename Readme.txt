@@ -38,4 +38,4 @@ UnityPlayerActivity.smali：
     invoke-static {}, Lcom/android/support/Main;->Start()V
 
 	
-看不懂，不会打包，打包出来没效果？没事，github有成品分享的议题，去那里寻求
+看不懂，不会打包，打包出来没效果？没事，github有成品分享的议题，去那里寻求，已放下载链接
