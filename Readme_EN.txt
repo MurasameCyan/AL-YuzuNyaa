@@ -22,4 +22,4 @@ Find </application> at the end of the file and directly replace it with the foll
 
 
 
-Don't understand it? Struggling with packaging? Packaging doesn't work? No worries—GitHub has threads sharing finished projects. Head over there for help.
+Don't understand it? Struggling with packaging? Packaging doesn't work? No worries, I've added a one-key APK packaging tool with built-in fake signatures. Please don't ask me how to use this APK packaging tool.
