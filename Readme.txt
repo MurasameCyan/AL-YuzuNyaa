@@ -24,4 +24,4 @@ UnityPlayerActivity.smali：
     invoke-static {}, Lcom/android/support/Main;->Start()V
 
 	
-看不懂，不会打包，打包出来没效果？没事，使用apk一键打包MOD MENU总没问题了吧，自带签名伪装，千万别问我如何使用这个apk工具
+看不懂，不会打包，打包出来没效果？没事，使用AL mod maker一键打包MOD MENU总没问题了吧，打包出来的apk自带签名伪装，千万别问我如何使用这个apk工具
