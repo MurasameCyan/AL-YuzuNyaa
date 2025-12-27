@@ -1,6 +1,6 @@
 
 
-Use APKEasyTool to decompile official game APKs on Windows platforms (note to update the apktool.jar plugin)
+Use APKEasyTool to decompile official game APKs on Windows platforms (note to update the apktool.jar plugin， use 2.11.0 version)
 
 
 Copy both the assets folder and the smali_classes4 folder into the decompiled folder.
