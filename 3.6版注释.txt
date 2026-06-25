@@ -43,5 +43,8 @@ json文件位于  Android/data/包名/files/Elaina.json
     "UnlockAllShips": false, // 全船解锁
     "UnlockUI": false, // 解锁UI
     "EXProtection": false, //EX关卡保护（启用后EX关卡无法出击）
-    "MetaProtection": false //Meta支援信标保护（启用后Meta支援信标无法出击）
+    "MetaProtection": false, //Meta支援信标保护（启用后Meta支援信标无法出击）
+    "FPS": 0, //自定义帧率上限，0 为关闭。
+    "CustomLoadingScreen": false, //启用自定义加载界面。
+    "optimizeSecretary": false //启用主界面秘书舰加载缓存优化。
   }
