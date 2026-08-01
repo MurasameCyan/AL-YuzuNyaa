@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static activity_main:I = 0x7f030000
+.field public static activity_main:I = 0x7f070000
 
 
 # direct methods

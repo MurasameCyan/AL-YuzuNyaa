@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static ic_launcher:I = 0x7f040000
+.field public static ic_launcher:I = 0x7f080000
 
-.field public static ic_launcher_round:I = 0x7f040001
+.field public static ic_launcher_round:I = 0x7f080001
 
 
 # direct methods

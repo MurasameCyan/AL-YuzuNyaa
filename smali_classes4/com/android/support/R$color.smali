@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static backgroundColor:I = 0x7f010000
+.field public static backgroundColor:I = 0x7f020002
 
-.field public static ic_launcher_background:I = 0x7f010001
+.field public static ic_launcher_background:I = 0x7f020005
 
 
 # direct methods

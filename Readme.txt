@@ -11,14 +11,10 @@ ApkEasyTool		不太推荐，4年没更新，落后时代了，面对一些高安
 
 smali_classes4文件夹 打包渠道服时可能需要重命名，不懂就问AI
 
-AndroidManifest.xml:	
-	位于根目录
-	在文件尾部找到 </application> ，直接替换成以下代码
-	<service android:name="com.android.support.Launcher" android:enabled="true" android:exported="false" android:stopWithTask="true"/>
-    </application>
-	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-	
-	
+
+你没看错，3.4.0之后不再需要悬浮权限了，它也能画出悬浮窗
+
+
 UnityPlayerActivity.smali：
 	位于com/unity3d/player/目录内
 	打开并找到<init>方法
@@ -27,4 +23,5 @@ UnityPlayerActivity.smali：
     invoke-static {}, Lcom/android/support/Main;->Start()V
 
 	
-看不懂，不会打包，打包出来没效果？没事，使用AL mod maker一键打包MOD MENU总没问题了吧，一键打包出来的apk自带签名伪装，千万别问我如何使用这个apk工具
+看不懂，不会打包，打包出来没效果？没事，使用AL mod maker一键打包MOD MENU总没问题了吧，一键打包出来的apk自带签名伪装
+AL mod maker 这个apk已经放在github代码里，自行下载，千万别问我如何使用这个apk工具

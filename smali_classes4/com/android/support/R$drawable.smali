@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static ic_launcher_foreground:I = 0x7f020000
+.field public static ic_launcher_foreground:I = 0x7f040006
 
 
 # direct methods

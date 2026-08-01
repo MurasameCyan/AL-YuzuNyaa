@@ -720,108 +720,100 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/invoke/MethodHandles$Lookup;->unreflect(Ljava/lang/reflect/Method;)Ljava/lang/invoke/MethodHandle;
 
-    move-result-object v0
+    move-result-object v4
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 203
-    sget-object v1, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
+    sget-object v0, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
-    sget-wide v3, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodsOffset:J
+    sget-wide v5, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodsOffset:J
 
-    invoke-virtual {v1, p0, v3, v4}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
+    invoke-virtual {v0, p0, v5, v6}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
     move-result-wide v9
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v5, 0x0
 
-    cmp-long p0, v9, v3
+    cmp-long p0, v9, v5
 
     if-nez p0, :cond_1
 
     .line 204
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 
     .line 205
     :cond_1
-    invoke-virtual {v1, v9, v10}, Lsun/misc/Unsafe;->getInt(J)I
+    invoke-virtual {v0, v9, v10}, Lsun/misc/Unsafe;->getInt(J)I
 
     move-result p0
 
     .line 207
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(I)V
 
     :goto_0
     if-ge v2, p0, :cond_2
 
-    int-to-long v3, v2
+    int-to-long v5, v2
 
     .line 209
-    sget-wide v5, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodSize:J
+    sget-wide v7, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodSize:J
 
-    mul-long/2addr v3, v5
+    mul-long/2addr v5, v7
 
-    add-long/2addr v3, v9
+    add-long/2addr v5, v9
 
-    sget-wide v5, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodBias:J
+    sget-wide v7, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodBias:J
 
-    add-long v7, v3, v5
+    add-long/2addr v7, v5
 
     .line 210
     sget-object v3, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
     sget-wide v5, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artOffset:J
 
-    move-object v4, v0
-
     invoke-virtual/range {v3 .. v8}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
 
     .line 211
-    const-class v3, Ljava/lang/reflect/Executable;
+    const-class v1, Ljava/lang/reflect/Executable;
 
-    invoke-static {v3, v0}, Ljava/lang/invoke/MethodHandles;->reflectAs(Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;)Ljava/lang/reflect/Member;
+    invoke-static {v1, v4}, Ljava/lang/invoke/MethodHandles;->reflectAs(Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;)Ljava/lang/reflect/Member;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Ljava/lang/reflect/Executable;
+    check-cast v1, Ljava/lang/reflect/Executable;
 
     .line 215
-    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :cond_2
-    return-object v1
+    return-object v0
 
     .line 201
     :catch_0
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 
     .line 194
     :cond_3
     :goto_1
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 .end method
 
 .method public static getInstanceFields(Ljava/lang/Class;)Ljava/util/List;
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -871,77 +863,71 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/invoke/MethodHandles$Lookup;->unreflectGetter(Ljava/lang/reflect/Field;)Ljava/lang/invoke/MethodHandle;
 
-    move-result-object v0
+    move-result-object v3
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 290
-    sget-object v1, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
+    sget-object v0, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
-    sget-wide v2, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->iFieldOffset:J
+    sget-wide v1, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->iFieldOffset:J
 
-    invoke-virtual {v1, p0, v2, v3}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
+    invoke-virtual {v0, p0, v1, v2}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
     move-result-wide v8
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v1, 0x0
 
-    cmp-long p0, v8, v2
+    cmp-long p0, v8, v1
 
     if-nez p0, :cond_1
 
     .line 291
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 
     .line 292
     :cond_1
-    invoke-virtual {v1, v8, v9}, Lsun/misc/Unsafe;->getInt(J)I
+    invoke-virtual {v0, v8, v9}, Lsun/misc/Unsafe;->getInt(J)I
 
     move-result p0
 
     .line 294
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v2, 0x0
-
-    move v10, v2
+    const/4 v1, 0x0
 
     :goto_0
-    if-ge v10, p0, :cond_3
+    if-ge v1, p0, :cond_3
 
-    int-to-long v2, v10
+    int-to-long v4, v1
 
     .line 296
-    sget-wide v4, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artFieldSize:J
+    sget-wide v6, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artFieldSize:J
 
-    mul-long/2addr v2, v4
+    mul-long/2addr v4, v6
 
-    add-long/2addr v2, v8
+    add-long/2addr v4, v8
 
-    sget-wide v4, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artFieldBias:J
+    sget-wide v6, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artFieldBias:J
 
-    add-long v6, v2, v4
+    add-long/2addr v6, v4
 
     .line 297
     sget-object v2, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
     sget-wide v4, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artOffset:J
 
-    move-object v3, v0
-
     invoke-virtual/range {v2 .. v7}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
 
     .line 298
     const-class v2, Ljava/lang/reflect/Field;
 
-    invoke-static {v2, v0}, Ljava/lang/invoke/MethodHandles;->reflectAs(Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;)Ljava/lang/reflect/Member;
+    invoke-static {v2, v3}, Ljava/lang/invoke/MethodHandles;->reflectAs(Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;)Ljava/lang/reflect/Member;
 
     move-result-object v2
 
@@ -950,45 +936,41 @@
     .line 301
     invoke-virtual {v2}, Ljava/lang/reflect/Field;->getModifiers()I
 
-    move-result v3
+    move-result v4
 
-    invoke-static {v3}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
+    invoke-static {v4}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_2
+    if-nez v4, :cond_2
 
     .line 302
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_2
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_3
-    return-object v1
+    return-object v0
 
     .line 288
     :catch_0
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 
     .line 281
     :cond_4
     :goto_1
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 .end method
 
 .method public static getStaticFields(Ljava/lang/Class;)Ljava/util/List;
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1038,77 +1020,71 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/invoke/MethodHandles$Lookup;->unreflectGetter(Ljava/lang/reflect/Field;)Ljava/lang/invoke/MethodHandle;
 
-    move-result-object v0
+    move-result-object v3
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 324
-    sget-object v1, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
+    sget-object v0, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
-    sget-wide v2, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->sFieldOffset:J
+    sget-wide v1, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->sFieldOffset:J
 
-    invoke-virtual {v1, p0, v2, v3}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
+    invoke-virtual {v0, p0, v1, v2}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
     move-result-wide v8
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v1, 0x0
 
-    cmp-long p0, v8, v2
+    cmp-long p0, v8, v1
 
     if-nez p0, :cond_1
 
     .line 325
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 
     .line 326
     :cond_1
-    invoke-virtual {v1, v8, v9}, Lsun/misc/Unsafe;->getInt(J)I
+    invoke-virtual {v0, v8, v9}, Lsun/misc/Unsafe;->getInt(J)I
 
     move-result p0
 
     .line 328
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v2, 0x0
-
-    move v10, v2
+    const/4 v1, 0x0
 
     :goto_0
-    if-ge v10, p0, :cond_3
+    if-ge v1, p0, :cond_3
 
-    int-to-long v2, v10
+    int-to-long v4, v1
 
     .line 330
-    sget-wide v4, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artFieldSize:J
+    sget-wide v6, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artFieldSize:J
 
-    mul-long/2addr v2, v4
+    mul-long/2addr v4, v6
 
-    add-long/2addr v2, v8
+    add-long/2addr v4, v8
 
-    sget-wide v4, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artFieldBias:J
+    sget-wide v6, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artFieldBias:J
 
-    add-long v6, v2, v4
+    add-long/2addr v6, v4
 
     .line 331
     sget-object v2, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
     sget-wide v4, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artOffset:J
 
-    move-object v3, v0
-
     invoke-virtual/range {v2 .. v7}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
 
     .line 332
     const-class v2, Ljava/lang/reflect/Field;
 
-    invoke-static {v2, v0}, Ljava/lang/invoke/MethodHandles;->reflectAs(Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;)Ljava/lang/reflect/Member;
+    invoke-static {v2, v3}, Ljava/lang/invoke/MethodHandles;->reflectAs(Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;)Ljava/lang/reflect/Member;
 
     move-result-object v2
 
@@ -1117,45 +1093,41 @@
     .line 335
     invoke-virtual {v2}, Ljava/lang/reflect/Field;->getModifiers()I
 
-    move-result v3
+    move-result v4
 
-    invoke-static {v3}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
+    invoke-static {v4}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
     .line 336
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_2
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_3
-    return-object v1
+    return-object v0
 
     .line 322
     :catch_0
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 
     .line 315
     :cond_4
     :goto_1
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 .end method
 
 .method public static varargs invoke(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 12
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1218,84 +1190,82 @@
 
     invoke-virtual {v0, v3, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v0
+    move-result-object v6
 
     .line 167
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    invoke-virtual {v6, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     .line 168
-    sget-object v1, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
+    sget-object v0, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
-    sget-wide v2, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodsOffset:J
+    sget-wide v1, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodsOffset:J
 
-    invoke-virtual {v1, p0, v2, v3}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
+    invoke-virtual {v0, p0, v1, v2}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v7, 0x0
 
-    cmp-long p0, v2, v5
+    cmp-long p0, v1, v7
 
     .line 169
-    const-string v11, "Cannot find matching method"
+    const-string v3, "Cannot find matching method"
 
     if-eqz p0, :cond_4
 
     .line 170
-    invoke-virtual {v1, v2, v3}, Lsun/misc/Unsafe;->getInt(J)I
+    invoke-virtual {v0, v1, v2}, Lsun/misc/Unsafe;->getInt(J)I
 
     move-result p0
 
     :goto_1
     if-ge v4, p0, :cond_3
 
-    int-to-long v5, v4
+    int-to-long v7, v4
 
     .line 173
-    sget-wide v7, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodSize:J
+    sget-wide v9, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodSize:J
 
-    mul-long/2addr v5, v7
+    mul-long/2addr v7, v9
 
-    add-long/2addr v5, v2
+    add-long/2addr v7, v1
 
-    sget-wide v7, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodBias:J
+    sget-wide v9, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodBias:J
 
-    add-long v9, v5, v7
+    add-long/2addr v9, v7
 
     .line 174
     sget-object v5, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
     sget-wide v7, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodOffset:J
 
-    move-object v6, v0
-
     invoke-virtual/range {v5 .. v10}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
 
     .line 177
-    invoke-virtual {v0}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     .line 178
-    invoke-virtual {v0}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
+    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 179
-    invoke-static {v1, p3}, Lorg/lsposed/hiddenapibypass/Helper;->checkArgsForInvokeMethod([Ljava/lang/Class;[Ljava/lang/Object;)Z
+    invoke-static {v0, p3}, Lorg/lsposed/hiddenapibypass/Helper;->checkArgsForInvokeMethod([Ljava/lang/Class;[Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     .line 180
-    invoke-virtual {v0, p1, p3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, p1, p3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -1310,7 +1280,7 @@
     :cond_3
     new-instance p0, Ljava/lang/NoSuchMethodException;
 
-    invoke-direct {p0, v11}, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v3}, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
@@ -1318,13 +1288,13 @@
     :cond_4
     new-instance p0, Ljava/lang/NoSuchMethodException;
 
-    invoke-direct {p0, v11}, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v3}, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
 .method public static varargs newInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 20
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1345,57 +1315,53 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
     .line 129
-    const-class v2, Lorg/lsposed/hiddenapibypass/Helper$InvokeStub;
+    const-class v0, Lorg/lsposed/hiddenapibypass/Helper$InvokeStub;
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    new-array v4, v3, [Ljava/lang/Class;
+    new-array v2, v1, [Ljava/lang/Class;
 
-    const-class v5, [Ljava/lang/Object;
+    const-class v3, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
-    aput-object v5, v4, v6
+    aput-object v3, v2, v4
 
-    const-string v5, "invoke"
+    const-string v3, "invoke"
 
-    invoke-virtual {v2, v5, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v3, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v2
+    move-result-object v6
 
     .line 130
-    const-class v4, Lorg/lsposed/hiddenapibypass/Helper$InvokeStub;
+    const-class v0, Lorg/lsposed/hiddenapibypass/Helper$InvokeStub;
 
-    new-array v5, v3, [Ljava/lang/Class;
+    new-array v2, v1, [Ljava/lang/Class;
 
-    const-class v7, [Ljava/lang/Object;
+    const-class v3, [Ljava/lang/Object;
 
-    aput-object v7, v5, v6
+    aput-object v3, v2, v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    move-result-object v4
+    move-result-object v0
 
     .line 131
-    invoke-virtual {v4, v3}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
     .line 132
-    sget-object v3, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
+    sget-object v1, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
-    sget-wide v7, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodsOffset:J
+    sget-wide v2, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodsOffset:J
 
-    invoke-virtual {v3, v0, v7, v8}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
+    invoke-virtual {v1, p0, v2, v3}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
-    move-result-wide v14
+    move-result-wide v2
 
     const-wide/16 v7, 0x0
 
-    cmp-long v5, v14, v7
+    cmp-long v5, v2, v7
 
     .line 133
     const-string v13, "Cannot find matching constructor"
@@ -1403,120 +1369,106 @@
     if-eqz v5, :cond_3
 
     .line 134
-    invoke-virtual {v3, v14, v15}, Lsun/misc/Unsafe;->getInt(J)I
+    invoke-virtual {v1, v2, v3}, Lsun/misc/Unsafe;->getInt(J)I
 
-    move-result v3
+    move-result v1
 
     :goto_0
-    if-ge v6, v3, :cond_2
+    if-ge v4, v1, :cond_2
 
-    int-to-long v7, v6
+    int-to-long v7, v4
 
     .line 137
     sget-wide v9, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodSize:J
 
     mul-long/2addr v7, v9
 
-    add-long/2addr v7, v14
+    add-long/2addr v7, v2
 
     sget-wide v9, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->artMethodBias:J
 
-    add-long v16, v7, v9
+    add-long/2addr v9, v7
 
     .line 138
     sget-object v5, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->unsafe:Lsun/misc/Unsafe;
 
-    sget-wide v18, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodOffset:J
+    sget-wide v7, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->methodOffset:J
+
+    invoke-virtual/range {v5 .. v10}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
+
+    .line 141
+    const-string v11, "<init>"
+
+    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_0
+
+    move-wide v11, v9
+
+    move-wide v9, v7
+
+    move-object v8, v0
 
     move-object v7, v5
 
-    move-object v8, v2
-
-    move-wide/from16 v9, v18
-
-    move-wide/from16 v11, v16
-
+    .line 142
     invoke-virtual/range {v7 .. v12}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
 
-    .line 141
-    const-string v7, "<init>"
-
-    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_0
-
-    move-object v8, v5
-
-    move-object v9, v4
-
-    move-wide/from16 v10, v18
-
-    move-object v7, v13
-
-    move-wide/from16 v12, v16
-
-    .line 142
-    invoke-virtual/range {v8 .. v13}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
-
     .line 143
-    sget-wide v8, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->classOffset:J
+    sget-wide v9, Lorg/lsposed/hiddenapibypass/HiddenApiBypass;->classOffset:J
 
-    invoke-virtual {v5, v4, v8, v9, v0}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
+    invoke-virtual {v5, v8, v9, v10, p0}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
     .line 144
-    invoke-virtual {v4}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
-
-    move-result-object v5
-
-    .line 145
-    invoke-static {v5, v1}, Lorg/lsposed/hiddenapibypass/Helper;->checkArgsForInvokeMethod([Ljava/lang/Class;[Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    .line 146
-    invoke-virtual {v4, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v8}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
 
     move-result-object v0
 
-    return-object v0
+    .line 145
+    invoke-static {v0, p1}, Lorg/lsposed/hiddenapibypass/Helper;->checkArgsForInvokeMethod([Ljava/lang/Class;[Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 146
+    invoke-virtual {v8, p1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 
     :cond_0
-    move-object v7, v13
+    move-object v8, v0
 
     :cond_1
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    move-object v13, v7
+    move-object v0, v8
 
     goto :goto_0
 
-    :cond_2
-    move-object v7, v13
-
     .line 149
-    new-instance v0, Ljava/lang/NoSuchMethodException;
+    :cond_2
+    new-instance p0, Ljava/lang/NoSuchMethodException;
 
-    invoke-direct {v0, v7}, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v13}, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
 
-    throw v0
-
-    :cond_3
-    move-object v7, v13
+    throw p0
 
     .line 133
-    new-instance v0, Ljava/lang/NoSuchMethodException;
+    :cond_3
+    new-instance p0, Ljava/lang/NoSuchMethodException;
 
-    invoke-direct {v0, v7}, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v13}, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p0
 .end method
 
 .method public static varargs setHiddenApiExemptions([Ljava/lang/String;)Z
