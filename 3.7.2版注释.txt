@@ -56,7 +56,8 @@ json文件位于  Android/data/包名/files/Elaina.json
     "AutoTactics": false, // 战术学院自动管理
     "AutoTacticsAddNewShip": true, // 自动添加舰船至战术学院
     "AutoTacticsMinShipLevel": 50, // 自动添加舰船至战术学院的最低等级
-    "AutoRetire": false // 自动退役
+    "AutoRetire": false, // 自动退役
+    "AutoDorm": false //自动入住后宅
   },
 
   // --- 杂项 (Misc) ---
@@ -81,6 +82,12 @@ json文件位于  Android/data/包名/files/Elaina.json
     "UnlockUI": false, // 解锁UI
     "EXProtection": false, //EX关卡保护（启用后EX关卡无法出击）
     "MetaProtection": false, //Meta支援信标保护（启用后Meta支援信标无法出击）
-    "FPS": 0 //自定义帧率上限
+    "FPS": 0, //自定义帧率上限
+    "FPS": 0, //自定义帧率上限
+    "CustomSVP": "" //自定义MVP优先顺序
+    CustomSVP后输入位置选择序列，例如6>5>4>3>2>1或1,3,4,5,2,6
+    选择序列按照从前到后的顺序依次检查，并优先选择本场实际出战的位置。 如果序列中包含本场未出战的位置，则自动跳过，并继续检查后续位置，直至选出可用位置
+    位置编号沿用游戏内的编队顺序，主力1-3，先锋4-6，潜艇7-9  
+    留空表示关闭CustomSVP功能，位置之间可使用>、,、;、|或空格作为分隔符
   }
 }
